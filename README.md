@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern personal portfolio built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Fast Vite dev/build setup
+- Type-safe React with TypeScript
+- Routing via React Router
+- Data fetching/caching with TanStack Query
+- Tailwind CSS + shadcn/ui + Radix primitives
+- Reusable UI components and icons
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Vite 5
+- React 18, React DOM
+- TypeScript 5
+- Tailwind CSS 3, tailwind-merge, tailwindcss-animate
+- shadcn/ui components (Radix UI)
+- React Router (`react-router-dom`)
+- TanStack React Query
+- Recharts (charts)
+- Sonner (toasts)
+- date-fns, lucide-react, zod
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Prerequisites:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+ and npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Install and run locally:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build and preview production build:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm run build
+npm run preview
 ```
+
+## Scripts
+
+- `npm run dev`: Start Vite dev server
+- `npm run build`: Production build
+- `npm run build:dev`: Development-mode build
+- `npm run preview`: Preview built app locally
+- `npm run lint`: Run ESLint
+
+## Project Structure
+
+- `src/main.tsx`: App bootstrap
+- `src/App.tsx`: Providers and routes
+- `src/pages/`: Route pages (`Index`, `NotFound`)
+- `src/components/`: UI components and `ui/` primitives
+- `src/hooks/`: Custom hooks
+- `src/lib/`: Utilities
+- `public/`: Static assets
+
+## Styling and UI
+
+- Tailwind is configured in `tailwind.config.ts` and `src/index.css`.
+- shadcn/ui components live under `src/components/ui/` and are based on Radix UI.
+
+## Routing
+
+Routes are defined in `src/App.tsx` using `react-router-dom`.
+
+## Notes on TypeScript Paths
+
+The alias `@/*` maps to `src/*` (see `tsconfig.json` and Vite `resolve.alias`). Import like `@/components/Button`.
+
+## Deployment
+
+This is a static site. Any static host works (e.g., Netlify, Vercel, GitHub Pages, Cloudflare Pages). Build with `npm run build` and deploy the `dist/` folder.
+
+## License
+
+MIT
