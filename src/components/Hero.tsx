@@ -25,7 +25,6 @@ const Hero = () => {
           </p>
         </div>
 
-        {/* Bio */}
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
           {getGreeting()}, I'm Beeplap!
         </p>
@@ -38,7 +37,7 @@ const Hero = () => {
             rel="noopener noreferrer" 
             className="text-foreground/70 hover:text-primary transition-colors"
           >
-            github
+            GitHub
           </a>
           <a 
             href="https://www.linkedin.com/in/beeplap-gharti-magar-5027592b9/" 
@@ -46,13 +45,14 @@ const Hero = () => {
             rel="noopener noreferrer" 
             className="text-foreground/70 hover:text-primary transition-colors"
           >
-            linkedin
+            LinkedIn
           </a>
           <a 
+            target="_blank" 
             href="mailto:ghartibeeplap@gmail.com" 
             className="text-foreground/70 hover:text-primary transition-colors"
           >
-            email
+            Email
           </a>
         </div>
       </div>
