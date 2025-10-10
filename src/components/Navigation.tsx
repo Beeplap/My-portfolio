@@ -1,93 +1,92 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+"use client"
+import { useState, useRef, useLayoutEffect } from "react"
+import { Menu, X } from "lucide-react"
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null)
+  const [positions, setPositions] = useState<{ left: number; width: number }[]>([])
+  const navRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  const navItems = ["Home", "Experience", "Projects", "Skills", "Contact"]
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    setIsMobileMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const navItems = [
-    { name: "Home", id: "home" },
-    { name: "Experience", id: "experience" },
-    { name: "Projects", id: "projects" },
-    { name: "Skills", id: "skills" },
-    { name: "Contact", id: "contact" },
-  ];
+  // Measure positions of nav items for highlight positioning
+  useLayoutEffect(() => {
+    if (navRef.current) {
+      const buttons = Array.from(navRef.current.querySelectorAll("button"))
+      const rects = buttons.map((btn) => ({
+        left: btn.offsetLeft,
+        width: btn.offsetWidth,
+      }))
+      setPositions(rects)
+    }
+  }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 p-4">
-      <div className={`max-w-4xl mx-auto transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/20 dark:border-white/10 rounded-full shadow-lg"
-          : "bg-white/5 dark:bg-black/10 backdrop-blur-lg border border-white/10 dark:border-white/5 rounded-full"
-      }`}>
-        <div className="px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
-            className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
-          >
-            Beeplap
-          </button>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-foreground/70 hover:text-primary transition-colors font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto">
+      <div className="relative flex items-center gap-8 px-6 py-3 bg-black/30 border border-white/10 rounded-full backdrop-blur-xl shadow-lg overflow-hidden">
+        
+        {/* Profile Image */}
+        <div className="flex items-center gap-4">
+          <img
+            src="./src/assets/beeo.jpg" // replace with your photo
+            alt="Profile"
+            className="w-10 h-10 rounded-full object-cover border border-white/20"
+          />
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 border-t border-white/10 dark:border-white/5 space-y-2">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-2 text-foreground/70 hover:text-primary hover:bg-white/5 dark:hover:bg-white/5 rounded-lg transition-colors font-medium"
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        )}
+        {/* Desktop Nav */}
+        <div
+          ref={navRef}
+          className="hidden md:flex relative items-center gap-6"
+          onMouseLeave={() => setHoverIndex(null)}
+        >
+          {/* Animated Hover Highlight */}
+          {hoverIndex !== null && positions[hoverIndex] && (
+            <span
+              className="absolute top-1/2 -translate-y-1/2 h-8 bg-white/90 rounded-full transition-all duration-300 ease-out shadow-md"
+              style={{
+                left: positions[hoverIndex].left - 6,
+                width: positions[hoverIndex].width + 12,
+              }}
+            />
+          )}
+
+          {navItems.map((item, i) => (
+            <button
+              key={item}
+              onMouseEnter={() => setHoverIndex(i)}
+              className="relative z-10 px-4 py-1.5 text-sm font-medium text-white/90 hover:text-black transition-colors duration-300"
+            >
+              {item}
+            </button>
+          ))}
         </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
-    </nav>
-  );
-};
 
-export default Navigation;
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden mt-3 bg-black/40 border border-white/10 backdrop-blur-xl rounded-2xl p-4 shadow-lg">
+          {navItems.map((item) => (
+            <button
+              key={item}
+              className="block w-full text-left px-4 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+            >
+              {item}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
+  )
+}
+
+export default Navigation
