@@ -13,7 +13,7 @@ const Navigation = () => {
   // Measure positions of nav items for highlight positioning
   useLayoutEffect(() => {
     if (navRef.current) {
-      const buttons = Array.from(navRef.current.querySelectorAll("button"))
+      const buttons = Array.from(navRef.current.querySelectorAll("a"))
       const rects = buttons.map((btn) => ({
         left: btn.offsetLeft,
         width: btn.offsetWidth,
@@ -53,13 +53,14 @@ const Navigation = () => {
           )}
 
           {navItems.map((item, i) => (
-            <button
+            <a
               key={item}
+              href={`#${item.toLowerCase()}`}
               onMouseEnter={() => setHoverIndex(i)}
               className="relative z-10 px-4 py-1.5 text-sm font-medium text-white/90 hover:text-black transition-colors duration-300"
             >
               {item}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -76,12 +77,14 @@ const Navigation = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden mt-3 bg-black/40 border border-white/10 backdrop-blur-xl rounded-2xl p-4 shadow-lg">
           {navItems.map((item) => (
-            <button
+            <a
               key={item}
+              href={`#${item.toLowerCase()}`}
               className="block w-full text-left px-4 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item}
-            </button>
+            </a>
           ))}
         </div>
       )}
