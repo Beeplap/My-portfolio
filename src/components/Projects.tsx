@@ -9,7 +9,7 @@ const Projects = () => {
         "A comprehensive attendance management system with real-time tracking, analytics dashboard, and automated reporting features.",
       tech: ["React", "Supabase", "Tailwind CSS"],
       link: "https://example.com",
-      github: "https://github.com",
+      github: "https://github.com/Beeplap/Attendance-tracker",
     },
     {
       title: "Upcoming Project",

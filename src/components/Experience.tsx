@@ -2,7 +2,7 @@ const Experience = () => {
   const skillCategories = [
     {
       title: "Frontend Development",
-      skills: [
+      exp: [
         "HTML",
         "CSS",
         "Javascript",
@@ -17,7 +17,7 @@ const Experience = () => {
     },
     {
       title: "Backend Development",
-      skills: [
+      exp: [
         "Python",
         "Typescript",
         "C#",
@@ -30,7 +30,7 @@ const Experience = () => {
     },
     {
       title: "Data Science",
-      skills: [
+      exp: [
         "Python",
         "R",
         "OpenCV",
@@ -46,7 +46,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16">Skills</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-16">Expriences</h2>
 
         <div className="space-y-12">
           {skillCategories.map((category, index) => (
@@ -54,7 +54,7 @@ const Experience = () => {
               <h3 className="text-2xl font-bold mb-6">{category.title}</h3>
               <div className="border-t border-border pt-6">
                 <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill) => (
+                  {category.exp.map((skill) => (
                     <span
                       key={skill}
                       className="px-3 py-1 text-sm bg-muted text-foreground rounded"

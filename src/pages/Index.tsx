@@ -42,7 +42,7 @@ const Index = () => {
         <Button
           onClick={scrollToTop}
           size="icon"
-          className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
+          className="fixed bottom-8 right-8 z-50 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-gray-500 hover:bg-gray-600"
           aria-label="Scroll to top"
         >
           <ChevronUp className="h-4 w-4" />
