@@ -18,7 +18,7 @@ const Footer = () => {
               href="https://github.com/beeplap"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
@@ -27,14 +27,14 @@ const Footer = () => {
               href="https://www.linkedin.com/in/beeplap-gharti-magar-5027592b9/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="LinkedIn"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:ghartibeeplap@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
