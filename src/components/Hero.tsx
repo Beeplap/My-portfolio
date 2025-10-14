@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 
 const Hero = () => {
   const getGreeting = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
+      <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8 animate-fade-in">
         {/* Name and Title */}
         <div className="space-y-4">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
@@ -26,7 +26,7 @@ const Hero = () => {
         </div>
 
         <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-          {getGreeting()}, I'm Beeplap!
+          {getGreeting()}, I'm Beeplap! A passionate full-stack developer crafting digital experiences with modern technologies.
         </p>
 
         {/* Social Links */}
@@ -57,6 +57,17 @@ const Hero = () => {
               <Mail className="h-5 w-5" />
             </a>
           </div>
+
+        {/* Call to Action */}
+        <div className="pt-8">
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            View My Work
+            <ArrowDown className="h-4 w-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
