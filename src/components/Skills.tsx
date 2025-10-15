@@ -20,13 +20,15 @@ const Skills = () => {
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className="group bg-card hover:bg-card/80 border border-border hover:border-primary/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_30px_rgba(52,211,153,0.15)] hover:-translate-y-1"
+              className="group relative overflow-hidden bg-card hover:bg-card/80 border border-border hover:border-primary/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.18)] hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-center">
                 <p className="text-xs text-primary mb-2 font-medium">{skill.category}</p>
                 <h3 className="text-xl font-semibold">{skill.name}</h3>
               </div>
+              {/* Decorative gradient effect to mirror Projects hover glow */}
+              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-primary/10 via-transparent to-primary/5 transition-opacity duration-500" />
             </div>
           ))}
         </div>
