@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import beeo from "@/assets/beeo.jpg";
 
 const Hero = () => {
   const getGreeting = () => {
@@ -20,7 +21,7 @@ const Hero = () => {
             {/* Top row: avatar, name, role */}
             <div className="flex items-center gap-4 md:gap-5">
               <img
-                src="./src/assets/beeo.jpg"
+                src={beeo}
                 alt="Avatar"
                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
               />
