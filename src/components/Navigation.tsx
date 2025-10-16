@@ -29,7 +29,7 @@ const Navigation = () => {
         {/* Profile Image */}
         <div className="flex items-center gap-4">
           <img
-            src="./src/assets/beeo.jpg" // replace with your photo
+            src="./src/assets/beeplap.jpg" // replace with your photo
             alt="Profile"
             className="w-10 h-10 rounded-full object-cover border border-white/20"
           />

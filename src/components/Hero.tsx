@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   const getGreeting = () => {
@@ -13,60 +13,62 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8 animate-fade-in">
-        {/* Name and Title */}
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            Beeplap
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground">
-            Full Stack Developer
-          </p>
-        </div>
+    <section id="home" className="px-4 py-10 md:py-16">
+      <div className="max-w-4xl mx-auto">
+        <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_30px_hsl(var(--primary)/0.06)] p-5 md:p-7">
+          <div className="flex flex-col gap-4">
+            {/* Top row: avatar, name, role */}
+            <div className="flex items-center gap-4 md:gap-5">
+              <img
+                src="./src/assets/beeo.jpg"
+                alt="Avatar"
+                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
+              />
+              <div>
+                <p className="text-xl md:text-2xl font-semibold text-[hsl(var(--primary))]">Beeplap</p>
+                <p className="text-sm md:text-base text-foreground/80">Full Stack Developer</p>
+              </div>
+            </div>
 
-        <p className="text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-          {getGreeting()}, I'm Beeplap! A passionate full-stack developer crafting digital experiences with modern technologies.
-        </p>
+            {/* Greeting headline */}
+            <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
+              {getGreeting()}, I'm Beeplap!
+            </h1>
 
-        {/* Social Links */}
-        <div className="flex items-center gap-9">
-            <a
-              href="https://github.com/beeplap"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
-              aria-label="GitHub"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/beeplap-gharti-magar-5027592b9/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:ghartibeeplap@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
-              aria-label="Email"
-            >
-              <Mail className="h-5 w-5" />
-            </a>
+            {/* Description */}
+            <p className="text-sm md:text-base text-foreground/90 leading-relaxed max-w-3xl">
+              A Nepali software developer studying BCA, fluent in English and Nepali. I'm a full stack developer with a passion for building web applications and mobile apps.
+            </p>
+
+            {/* Social icons row */}
+            <div className="flex items-center justify-center gap-2 md:gap-3 pt-1">
+              <a
+                href="https://github.com/beeplap"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
+              >
+                <Github className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/beeplap-gharti-magar-5027592b9/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
+              >
+                <Linkedin className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href="mailto:ghartibeeplap@gmail.com"
+                aria-label="Email"
+                className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
+              >
+                <Mail className="h-4.5 w-4.5" />
+              </a>
+            </div>
           </div>
-
-        {/* Call to Action */}
-        <div className="pt-8">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-          >
-            View My Work
-            <ArrowDown className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </section>
