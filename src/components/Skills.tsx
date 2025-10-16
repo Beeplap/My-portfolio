@@ -1,36 +1,89 @@
 const Skills = () => {
-  const skills = [
-    { name: "React", category: "Frontend" },
-    { name: "Next.js", category: "Frontend" },
-    { name: "Tailwind CSS", category: "Frontend" },
-    { name: "Supabase", category: "Backend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Python", category: "Backend" },
-  ];
-
   return (
     <section id="skills" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-muted-foreground text-lg">Tools and technologies I work with</p>
-        </div>
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Experience</h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 animate-slide-up">
-          {skills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className="group relative overflow-hidden bg-card hover:bg-card/80 border border-border hover:border-primary/50 rounded-2xl p-8 transition-all duration-300 hover:shadow-[0_0_40px_hsl(var(--primary)_/_0.18)] hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="text-center">
-                <p className="text-xs text-primary mb-2 font-medium">{skill.category}</p>
-                <h3 className="text-xl font-semibold">{skill.name}</h3>
-              </div>
-              {/* Decorative gradient effect to mirror Projects hover glow */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-primary/10 via-transparent to-primary/5 transition-opacity duration-500" />
+        <div className="space-y-12">
+          {/* Card 1 */}
+          <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8">
+            <div className="space-y-2">
+              <h3 className="text-lg md:text-xl font-semibold">Full Stack Developer (Contract)</h3>
+              <p className="text-sm text-muted-foreground">@ Hyson Horizon</p>
+              <p className="text-sm text-muted-foreground">Dec 2024 - Present</p>
             </div>
-          ))}
+            <div className="h-px w-full bg-border/80 my-4" />
+            <p className="text-sm md:text-[15px] leading-relaxed text-foreground/90">
+              Led implementation of frontend development of websites. Efficiently translated designs into code, while
+              ensuring maintainability, accessibility and performance. Actively researching and developing for LLM
+              integration into product.
+            </p>
+            <div className="mt-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">Relevant skills:</p>
+              <div className="grid grid-cols-2 gap-x-6 text-sm">
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>NextJS</li>
+                  <li>React</li>
+                  <li>Astro</li>
+                </ul>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Typescript</li>
+                  <li>TailwindCSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8">
+            <div className="space-y-2">
+              <h3 className="text-lg md:text-xl font-semibold">Bachelor of Computer Science student</h3>
+              <p className="text-sm text-muted-foreground">July 2024 - Present</p>
+            </div>
+            <div className="h-px w-full bg-border/80 my-4" />
+            <p className="text-sm md:text-[15px] leading-relaxed text-foreground/90">
+              Awarded a 50% Vice-Chancellor Scholarship to study Bachelor's in Computer Science.
+            </p>
+            <div className="mt-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">Relevant skills:</p>
+              <div className="grid grid-cols-2 gap-x-6 text-sm">
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Java</li>
+                  <li>Kotlin</li>
+                  <li>C#</li>
+                </ul>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>VueJS</li>
+                  <li>MongoDB</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8">
+            <div className="space-y-2">
+              <h3 className="text-lg md:text-xl font-semibold">Frontend Web Developer Intern</h3>
+              <p className="text-sm text-muted-foreground">Jan 2024 - April 2024</p>
+            </div>
+            <div className="h-px w-full bg-border/80 my-4" />
+            <p className="text-sm md:text-[15px] leading-relaxed text-foreground/90">
+              Learnt how to build WordPress sites and further enhance my skills in PHP. I also learnt how to closely
+              work with UI/UX designers and pay close attention to details with the designs I am given.
+            </p>
+            <div className="mt-6">
+              <p className="font-semibold mb-2 text-sm md:text-base">Relevant skills:</p>
+              <div className="grid grid-cols-2 gap-x-6 text-sm">
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>WordPress & PHP</li>
+                </ul>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Adobe XD</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

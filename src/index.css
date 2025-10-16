@@ -72,6 +72,11 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-inter antialiased;
+    /* Subtle dotted grid background similar to the reference */
+    background-image:
+      radial-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-size: 24px 24px; /* spacing of dots */
+    background-position: 0 0;
   }
   
   html {
@@ -80,6 +85,12 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  /* Reusable dotted grid background */
+  .bg-dots {
+    background-image: radial-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: 0 0;
+  }
   .animate-fade-in {
     animation: fadeIn 1s ease-in-out;
   }
