@@ -10,7 +10,6 @@ const Navigation = () => {
 
   const navItems = ["Home", "Experience", "Projects", "Skills", "Contact"]
 
-  // Measure positions of nav items for highlight positioning
   useLayoutEffect(() => {
     if (navRef.current) {
       const buttons = Array.from(navRef.current.querySelectorAll("a"))
@@ -26,22 +25,19 @@ const Navigation = () => {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto">
       <div className="relative flex items-center gap-8 px-6 py-3 bg-black/30 border border-white/10 rounded-full backdrop-blur-xl shadow-lg overflow-hidden">
         
-        {/* Profile Image */}
         <div className="flex items-center gap-4">
           <img
-            src="./src/assets/beeplap.jpg" // replace with your photo
+            src="./src/assets/beeplap.jpg" 
             alt="Profile"
             className="w-10 h-10 rounded-full object-cover border border-white/20"
           />
         </div>
 
-        {/* Desktop Nav */}
         <div
           ref={navRef}
           className="hidden md:flex relative items-center gap-6"
           onMouseLeave={() => setHoverIndex(null)}
         >
-          {/* Animated Hover Highlight */}
           {hoverIndex !== null && positions[hoverIndex] && (
             <span
               className="absolute top-1/2 -translate-y-1/2 h-8 bg-white/90 rounded-full transition-all duration-300 ease-out shadow-md"

@@ -20,7 +20,7 @@ const Hero = () => {
             {/* Top row: avatar, name, role */}
             <div className="flex items-center gap-4 md:gap-5">
               <img
-                src="@/assets/beeo.jpg"
+                src="src/assets/beeo.jpg"
                 alt="Avatar"
                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
               />

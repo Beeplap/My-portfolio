@@ -8,60 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    /* Neutral black/gray theme */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
 
-    --card: 220 27% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 220 27% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 158 64% 52%;
-    --primary-foreground: 220 27% 8%;
+    /* Primary becomes light gray for neutral emphasis */
+    --primary: 0 0% 92%;
+    --primary-foreground: 0 0% 6%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 96%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 62%;
 
-    --accent: 158 64% 52%;
-    --accent-foreground: 220 27% 8%;
+    /* Accent is also neutral gray to avoid color tint */
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 96%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 0 0% 96%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 158 64% 52%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 60%;
 
     --radius: 1rem;
     
-    --glow-primary: 158 64% 52%;
-    --gradient-hero: linear-gradient(135deg, hsl(158 64% 52% / 0.1), hsl(220 27% 12% / 0.05));
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --glow-primary: 0 0% 92%;
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 92% / 0.06), hsl(0 0% 10% / 0.04));
+    --shadow-glow: 0 0 40px hsl(0 0% 92% / 0.08);
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 0% 92%;
+    --sidebar-primary-foreground: 0 0% 6%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 0 0% 60%;
   }
 
   .dark {
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
   }
 }
 
@@ -74,7 +70,8 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-inter antialiased;
     /* Subtle dotted grid background similar to the reference */
     background-image:
-      radial-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+
+    radial-gradient(hsl(0 0% 100% / 0.20) 1px, transparent 1px);
     background-size: 24px 24px; /* spacing of dots */
     background-position: 0 0;
   }
@@ -87,7 +84,7 @@ All colors MUST be HSL.
 @layer utilities {
   /* Reusable dotted grid background */
   .bg-dots {
-    background-image: radial-gradient(hsl(0 0% 100% / 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(hsl(0 0% 100% / 0.10) 1px, transparent 1px);
     background-size: 24px 24px;
     background-position: 0 0;
   }
