@@ -1,6 +1,8 @@
-# Portfolio
+# Beeplap Portfolio
 
 Modern personal portfolio built with React, TypeScript, Vite, Tailwind CSS, and shadcn/ui.
+
+> **Version:** 1.0.0 | **Last Updated:** 2025
 
 ## Features
 
@@ -36,6 +38,8 @@ Install and run locally:
 npm install
 npm run dev
 ```
+
+The development server will start at `http://localhost:5173`
 
 Build and preview production build:
 
