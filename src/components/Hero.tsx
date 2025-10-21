@@ -16,7 +16,7 @@ const Hero = () => {
     <section id="home" className="px-4 py-10 md:py-16">
       <div className="max-w-4xl mx-auto">
         <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_30px_hsl(var(--primary)/0.06)] p-5 md:p-7">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col cursor-default gap-4">
             {/* Top row: avatar, name, role */}
             <div className="flex items-center gap-4 md:gap-5">
               <img

@@ -24,7 +24,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+        <h2 className="text-4xl md:text-5xl cursor-default font-bold mb-16 text-center">
           Featured Projects
         </h2>
 
@@ -32,7 +32,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className="group relative overflow-hidden bg-muted/50 backdrop-blur-sm border border-border rounded-2xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
+              className="group cursor-default relative overflow-hidden bg-muted/50 backdrop-blur-sm border border-border rounded-2xl p-6 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">

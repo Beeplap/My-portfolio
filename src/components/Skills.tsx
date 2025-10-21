@@ -8,8 +8,6 @@ const Skills = () => {
         "Javascript",
         "Typescript",
         "React",
-        "Vue",
-        "WordPress",
         "TailwindCSS",
       ],
     },
@@ -18,8 +16,7 @@ const Skills = () => {
       exp: [
         "Python",
         "Typescript",
-        "C#",
-        "Kotlin",
+        "Java",
         "PHP",
         "PostgreSQL",
         "MySQL",
@@ -30,9 +27,6 @@ const Skills = () => {
       title: "Data Science",
       exp: [
         "Python",
-        "R",
-        "OpenCV",
-        "SAS",
         "MySQL",
         "Pandas",
       ],
@@ -50,7 +44,7 @@ const Skills = () => {
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8"
+              className="rounded-3xl cursor-default border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8"
             >
               <h3 className="text-xl md:text-2xl font-semibold tracking-tight mb-4">
                 {category.title}
