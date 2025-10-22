@@ -48,24 +48,25 @@ const Navigation = () => {
 
       if (sections.length === 0) return
 
-      const scrollPosition = window.scrollY + window.innerHeight / 2
+      const scrollPosition = window.scrollY
+      const windowHeight = window.innerHeight
       let activeIndex = 0
 
-      // Check each section to find the one that's most visible
+      // Find the section that's most visible in the viewport
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i]
         if (section) {
           const rect = section.getBoundingClientRect()
-          const sectionTop = rect.top + window.scrollY
-          const sectionBottom = sectionTop + rect.height
+          const sectionTop = rect.top
+          const sectionBottom = rect.bottom
 
-          // If we're in the middle of a section or past it, this is our active section
-          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          // If the section is in the viewport (even partially)
+          if (sectionTop <= windowHeight / 2 && sectionBottom >= windowHeight / 2) {
             activeIndex = i
             break
           }
-          // If we've scrolled past all sections, the last one should be active
-          if (scrollPosition >= sectionBottom && i === sections.length - 1) {
+          // If we've scrolled past the middle of the viewport and this section is above it
+          if (sectionTop <= windowHeight / 2 && i === sections.length - 1) {
             activeIndex = i
           }
         }
@@ -121,44 +122,51 @@ const Navigation = () => {
           role="navigation"
           aria-label="Main navigation"
         >
-          {/* Active indicator */}
-          {activeIndex !== null && positions[activeIndex] && (
-            <span
-              className="absolute top-1/2 -translate-y-1/2 h-8 bg-white/20 rounded-full transition-all duration-300 ease-out"
-              style={{
-                left: positions[activeIndex].left - 6,
-                width: positions[activeIndex].width + 12,
-              }}
-            />
-          )}
-          
-          {/* Hover indicator */}
-          {hoverIndex !== null && positions[hoverIndex] && hoverIndex !== activeIndex && (
-            <span
-              className="absolute top-1/2 -translate-y-1/2 h-8 bg-white/90 rounded-full transition-all duration-300 ease-out shadow-md"
-              style={{
-                left: positions[hoverIndex].left - 6,
-                width: positions[hoverIndex].width + 12,
-              }}
-            />
-          )}
+          {/* Unified dynamic highlighter */}
+          {(() => {
+            // Determine which index to highlight (hover takes priority over active)
+            const highlightIndex = hoverIndex !== null ? hoverIndex : activeIndex
+            const isHovering = hoverIndex !== null
+            
+            return highlightIndex !== null && positions[highlightIndex] && (
+              <span
+                className={`absolute top-1/2 -translate-y-1/2 h-8 rounded-full transition-all duration-300 ease-out ${
+                  isHovering 
+                    ? 'bg-white/90 shadow-md ' 
+                    : 'bg-white/20'
+                }`}
+                style={{
+                  left: positions[highlightIndex].left - 6,
+                  width: positions[highlightIndex].width + 12,
+                }}
+              />
+            )
+          })()}
 
-          {navItems.map((item, i) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
-              onMouseEnter={() => setHoverIndex(i)}
-              className={`relative z-10 px-4 py-1.5 text-sm font-medium transition-colors duration-300 ${
-                activeIndex === i 
-                  ? 'text-white' 
-                  : 'text-white/90 hover:text-black'
-              }`}
-              aria-current={activeIndex === i ? 'page' : undefined}
-            >
-              {item.name}
-            </a>
-          ))}
+          {navItems.map((item, i) => {
+            const isActive = activeIndex === i
+            const isHovered = hoverIndex === i
+            const isHighlighted = hoverIndex !== null ? isHovered : isActive
+            
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                onMouseEnter={() => setHoverIndex(i)}
+                className={`relative z-10 px-4 py-1.5 text-sm font-medium transition-colors duration-300 ${
+                  isHovered 
+                    ? 'text-black' 
+                    : isActive 
+                      ? 'text-white' 
+                      : 'text-white/90 hover:text-black'
+                }`}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.name}
+              </a>
+            )
+          })}
         </div>
 
         {/* Mobile Menu Button */}
