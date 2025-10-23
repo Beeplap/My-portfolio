@@ -1,6 +1,12 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
+  const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const email = 'ghartibeeplap@gmail.com';
+    const mailtoLink = `mailto:${email}`;
+    window.open(mailtoLink, '_blank');
+  };
   const currentYear = new Date().getFullYear();
 
   return (
@@ -34,6 +40,7 @@ const Footer = () => {
             </a>
             <a
               href="mailto:ghartibeeplap@gmail.com"
+              onClick={openMailClient}
               className="relative group inline-flex items-center text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >

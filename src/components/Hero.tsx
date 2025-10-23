@@ -2,6 +2,12 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import beeoImage from "../assets/beeo.jpg";
 
 const Hero = () => {
+  const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const email = 'ghartibeeplap@gmail.com';
+    const mailtoLink = `mailto:${email}`;
+    window.open(mailtoLink, '_blank');
+  };
   const getGreeting = () => {
     const hour = new Date().getHours();
     if (hour < 12) {
@@ -63,6 +69,7 @@ const Hero = () => {
               </a>
               <a
                 href="mailto:ghartibeeplap@gmail.com"
+                onClick={openMailClient}
                 aria-label="Email"
                 className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
               >
