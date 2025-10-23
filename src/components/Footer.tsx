@@ -4,7 +4,8 @@ const Footer = () => {
   const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const email = 'ghartibeeplap@gmail.com';
-    const mailtoLink = `mailto:${email}`;
+    const subject = 'Hello from your portfolio!';
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
     window.open(mailtoLink, '_blank');
   };
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto cursor-default">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Copyright */}
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-sm transition-colors duration-300 hover:text-foreground/80">
             © {currentYear} Beeplap Gharti Magar. All rights reserved.
           </p>
 

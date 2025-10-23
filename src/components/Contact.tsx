@@ -2,7 +2,8 @@ const Contact = () => {
   const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const email = 'ghartibeeplap@gmail.com';
-    const mailtoLink = `mailto:${email}`;
+    const subject = 'Hello from your portfolio!';
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
     window.open(mailtoLink, '_blank');
   };
   return (

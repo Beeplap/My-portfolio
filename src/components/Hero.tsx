@@ -5,7 +5,8 @@ const Hero = () => {
   const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const email = 'ghartibeeplap@gmail.com';
-    const mailtoLink = `mailto:${email}`;
+    const subject = 'Hello from your portfolio!';
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
     window.open(mailtoLink, '_blank');
   };
   const getGreeting = () => {
@@ -28,8 +29,8 @@ const Hero = () => {
             <div className="flex items-center gap-4 md:gap-5">
               <img
                 src={beeoImage}
-                alt="Avatar"
-                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
+                alt="Beeplap Gharti Magar - Full Stack Developer"
+                className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover transition-transform duration-300 hover:scale-105"
               />
               <div>
                 <p className="text-xl md:text-2xl font-semibold text-[hsl(var(--primary))]">Beeplap</p>
@@ -44,7 +45,7 @@ const Hero = () => {
 
             {/* Description */}
             <p className="text-sm md:text-base text-foreground/90 leading-relaxed max-w-3xl">
-              A Nepali software developer studying BCA, fluent in English and Nepali. I'm a full stack developer with a passion for building web applications and mobile apps.
+              A passionate Nepali software developer studying BCA, fluent in English and Nepali. I'm a full stack developer with a love for building innovative web applications and mobile apps that make a difference.
             </p>
 
             {/* Social icons row */}
