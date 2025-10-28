@@ -150,6 +150,15 @@ const Navigation = () => {
           />
         </div>
 
+        {/* Status display for mobile only */}
+        <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
+          </span>
+          <span className="text-white font-medium text-xs">Available</span>
+        </div>
+
         <div
           ref={navRef}
           className="hidden md:flex relative items-center gap-6"
@@ -206,7 +215,7 @@ const Navigation = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white hover:text-white/80 transition-colors p-2 rounded-lg hover:bg-white/10"
+          className="ml-auto md:ml-0 md:hidden text-white hover:text-white/80 transition-colors p-2 rounded-lg hover:bg-white/10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMobileMenuOpen}
