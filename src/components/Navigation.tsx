@@ -93,7 +93,8 @@ const Navigation = () => {
   }, [])
 
   useLayoutEffect(() => {
-    if (navRef.current) {
+    const measure = () => {
+      if (!navRef.current) return
       const buttons = Array.from(navRef.current.querySelectorAll("a"))
       const rects = buttons.map((btn) => ({
         left: btn.offsetLeft,
@@ -101,7 +102,41 @@ const Navigation = () => {
       }))
       setPositions(rects)
     }
-  }, [])
+
+    // Initial measure after next frame to ensure layout is stable
+    const rafId = requestAnimationFrame(measure)
+
+    // Re-measure after fonts load (first visit issue)
+    // @ts-expect-error: document.fonts may not exist in some browsers
+    const fontsReady: Promise<void> | undefined = typeof document !== 'undefined' && document.fonts && document.fonts.ready
+    let fontsThenCleanup: (() => void) | null = null
+    if (fontsReady && typeof (fontsReady as any).then === 'function') {
+      ;(fontsReady as Promise<unknown>).then(() => {
+        requestAnimationFrame(measure)
+      })
+      fontsThenCleanup = () => {}
+    }
+
+    // Observe size changes of the nav container
+    let resizeObserver: ResizeObserver | null = null
+    if (typeof ResizeObserver !== 'undefined' && navRef.current) {
+      resizeObserver = new ResizeObserver(() => {
+        requestAnimationFrame(measure)
+      })
+      resizeObserver.observe(navRef.current)
+    }
+
+    // Window resize
+    const onResize = () => requestAnimationFrame(measure)
+    window.addEventListener('resize', onResize)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      window.removeEventListener('resize', onResize)
+      if (resizeObserver && navRef.current) resizeObserver.disconnect()
+      if (fontsThenCleanup) fontsThenCleanup()
+    }
+  }, [activeIndex])
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto">
