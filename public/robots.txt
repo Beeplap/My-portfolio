@@ -1,5 +1,5 @@
 # Robots.txt for Beeplap Portfolio
-# Last updated: 2025-10-19
+# Last updated: 2025-10-29
 
 # Allow all major search engines
 User-agent: Googlebot
@@ -24,9 +24,10 @@ Allow: /
 # Allow all other bots
 User-agent: *
 Allow: /
-# Crawl-delay: 10  # Optional: uncomment and tune if needed
 
-# Sitemap location (replace with your production URL when available)
-# Sitemap: https://yourdomain.com/sitemap.xml
+# Crawl-delay: 10  # Optional: uncomment and tune if your server is small
+
+# Sitemap location
+Sitemap: https://beeplap.com.np/sitemap.xml
 
 # End of robots.txt
