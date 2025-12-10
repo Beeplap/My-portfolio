@@ -8,20 +8,20 @@ interface NavItem {
   href: string
 }
 
+const navItems: NavItem[] = [
+  { name: "Home", href: "#home" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skills" },
+  { name: "Contact", href: "#contact" },
+]
+
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [hoverIndex, setHoverIndex] = useState<number | null>(null)
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const [positions, setPositions] = useState<{ left: number; width: number }[]>([])
   const navRef = useRef<HTMLDivElement>(null)
-
-  const navItems: NavItem[] = [
-    { name: "Home", href: "#home" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" }
-  ]
 
   // Smooth scroll behavior
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -107,11 +107,13 @@ const Navigation = () => {
     const rafId = requestAnimationFrame(measure)
 
     // Re-measure after fonts load (first visit issue)
-    // @ts-expect-error: document.fonts may not exist in some browsers
-    const fontsReady: Promise<void> | undefined = typeof document !== 'undefined' && document.fonts && document.fonts.ready
+    const fontsReady: Promise<FontFaceSet> | undefined =
+      typeof document !== "undefined" && "fonts" in document
+        ? (document as Document & { fonts: FontFaceSet }).fonts.ready
+        : undefined
     let fontsThenCleanup: (() => void) | null = null
-    if (fontsReady && typeof (fontsReady as any).then === 'function') {
-      ;(fontsReady as Promise<unknown>).then(() => {
+    if (fontsReady && typeof fontsReady.then === "function") {
+      void fontsReady.then(() => {
         requestAnimationFrame(measure)
       })
       fontsThenCleanup = () => {}
@@ -130,10 +132,12 @@ const Navigation = () => {
     const onResize = () => requestAnimationFrame(measure)
     window.addEventListener('resize', onResize)
 
+    const navElement = navRef.current
+
     return () => {
       cancelAnimationFrame(rafId)
       window.removeEventListener('resize', onResize)
-      if (resizeObserver && navRef.current) resizeObserver.disconnect()
+      if (resizeObserver && navElement) resizeObserver.disconnect()
       if (fontsThenCleanup) fontsThenCleanup()
     }
   }, [activeIndex])
@@ -225,11 +229,13 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${
-        isMobileMenuOpen 
-          ? 'opacity-100 translate-y-0 mt-3' 
-          : 'opacity-0 -translate-y-2 pointer-events-none'
-      }`}>
+      <div
+        className={`md:hidden origin-top transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen
+            ? "opacity-100 translate-y-0 mt-3 max-h-[420px] pointer-events-auto"
+            : "opacity-0 -translate-y-2 max-h-0 overflow-hidden pointer-events-none"
+        }`}
+      >
         <div className="bg-black/40 border border-white/10 backdrop-blur-xl rounded-2xl p-4 shadow-lg">
           {navItems.map((item, index) => (
             <a
@@ -238,10 +244,10 @@ const Navigation = () => {
               onClick={(e) => handleNavClick(e, item.href)}
               className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
                 activeIndex === index
-                  ? 'text-white bg-white/20'
-                  : 'text-white/80 hover:text-white hover:bg-white/10'
+                  ? "text-white bg-white/20"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
-              aria-current={activeIndex === index ? 'page' : undefined}
+              aria-current={activeIndex === index ? "page" : undefined}
             >
               {item.name}
             </a>

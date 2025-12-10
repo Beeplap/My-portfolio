@@ -17,18 +17,18 @@ const projects: Project[] = [
     description:
       "A comprehensive Student management system with real-time tracking, analytics dashboard, and automated reporting for teams.",
     tech: ["React", "Supabase", "Tailwind CSS"],
-    link: "https://example.com", // replace with live link
-    github: "https://github.com/Beeplap/studentManagement",
-    image: "/assets/scholar.png", // ensure this file is in public/assets
+    link: "https://student-management-bzx9.vercel.app/login",
+    github: "https://github.com/beeplap/studentManagement",
+    image: "/assets/scholar.png",
   },
   {
     title: "Client Portfolio Site",
     description:
       "A custom portfolio website built with Next.js, optimized for SEO and performance, showcasing the client's work with a CMS-driven content flow.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://example.com", // replace with client site link
-    github: "https://github.com", // replace if public repo exists
-    image: "/assets/arvind.png", // ensure this file is in public/assets
+    link: "https://www.arvindpandey.com.np",
+    github: "https://github.com/beeplap/client_site",
+    image: "/assets/arvind.png", 
   },
 ];
 
@@ -50,7 +50,11 @@ const Projects = () => {
                 <div className="w-full lg:w-1/2 flex justify-center">
                   <div className="relative group">
                     <div
-                      className="overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.24)] transition-transform duration-700 [transform:perspective(1200px)_rotateY(-17deg)_rotateX(3deg)_translateY(0)] group-hover:[transform:perspective(1200px)_rotateY(0deg)_rotateX(0deg)_translateY(-10px)]"
+                      className={`overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.24)] transition-transform duration-700 transform ${
+                        isReversed
+                          ? "lg:[transform:perspective(1200px)_rotateY(-17deg)_translateY(0)] lg:group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)]"
+                          : "lg:[transform:perspective(1200px)_rotateY(17deg)_translateY(0)] lg:group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)]"
+                      }`}
                     >
                       <img
                         src={project.image}
