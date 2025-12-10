@@ -50,8 +50,7 @@ const Projects = () => {
                 <div className="w-full lg:w-1/2 flex justify-center">
                   <div className="relative group">
                     <div
-                      className="overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm shadow-[0_0_35px_rgba(0,0,0,0.2)] transform transition-transform duration-500 group-hover:rotate-0 group-hover:-translate-y-2"
-                      style={{ transform: "rotate(-2.5deg)" }}
+                      className="overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.24)] transition-transform duration-700 [transform:perspective(1200px)_rotateY(-17deg)_rotateX(3deg)_translateY(0)] group-hover:[transform:perspective(1200px)_rotateY(0deg)_rotateX(0deg)_translateY(-10px)]"
                     >
                       <img
                         src={project.image}
