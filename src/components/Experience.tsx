@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Calendar, MapPin, Building2 } from "lucide-react";
 
 type TabKey = "experience" | "education" | "extracurricular";
 
@@ -106,24 +107,18 @@ const Experience = () => {
 
                 <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground mb-3">
                   <div className="flex items-center gap-2">
-                    <span role="img" aria-hidden="true">
-                      🗓️
-                    </span>
+                    <Calendar className="h-4 w-4 text-foreground/70" aria-hidden />
                     <span>{entry.period}</span>
                   </div>
-                  {entry.org && (
+                  {entry.org && entry.org.trim() !== "" && (
                     <div className="flex items-center gap-2">
-                      <span role="img" aria-hidden="true">
-                        🏢
-                      </span>
+                      <Building2 className="h-4 w-4 text-foreground/70" aria-hidden />
                       <span>{entry.org}</span>
                     </div>
                   )}
                   {entry.location && (
                     <div className="flex items-center gap-2">
-                      <span role="img" aria-hidden="true">
-                        📍
-                      </span>
+                      <MapPin className="h-4 w-4 text-foreground/70" aria-hidden />
                       <span>{entry.location}</span>
                     </div>
                   )}
