@@ -42,7 +42,7 @@ const educationEntries: Entry[] = [
     period: "July 2023 - Present",
     org: "Butwal Kalika Campus",
     location: "Butwal",
-    description: "Currently pursuing BCA with focus on software engineering foundations.",
+    description: "Currently pursuing BCA with focus on software engineering (4th semester).",
   },
 ];
 
@@ -86,8 +86,8 @@ const Experience = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-5 py-2 text-sm md:text-base transition-all rounded-md ${
                   isActive
-                    ? "bg-[#1d1c20] text-foreground shadow-[0_0_30px_rgba(0,0,0,0.15)]"
-                    : "text-foreground/80 hover:bg-[#1d1c20]"
+                    ? "bg-[#151515] text-foreground shadow-[0_0_30px_rgba(0,0,0,0.15)]"
+                    : "text-foreground/80 hover:bg-[#151515]"
                 }`}
               >
                 {tab.label}

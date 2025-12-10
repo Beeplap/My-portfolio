@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
-import beeoImage from "../assets/beeo.jpg";
+
 
 const Hero = () => {
   const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,7 +28,7 @@ const Hero = () => {
             {/* Top row: avatar, name, role */}
             <div className="flex items-center gap-4 md:gap-5">
               <img
-                src={beeoImage}
+                src="/assets/beeo.jpg"
                 alt="Beeplap Gharti Magar - Full Stack Developer"
                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover transition-transform duration-300 hover:scale-105"
               />
