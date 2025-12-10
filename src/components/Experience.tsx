@@ -73,17 +73,17 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-20 px-4">
-      <div className="max-w-5xl cursor-default mx-auto">
+      <div className="max-w-4xl cursor-default mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center">Experience</h2>
 
-        <div className="flex items-center justify-center gap-4 mb-10">
+        <div className="flex items-center justify-center gap-4 mb-4">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 text-sm md:text-base transition-all ${
+                className={`px-5 py-2 text-sm md:text-base transition-all rounded-md ${
                   isActive
                     ? "bg-[#1d1c20] text-foreground shadow-[0_0_30px_rgba(0,0,0,0.15)]"
                     : "text-foreground/80 hover:bg-[#1d1c20]"
