@@ -52,8 +52,8 @@ const Projects = () => {
                     <div
                       className={`overflow-hidden rounded-2xl border border-border/80 bg-card/60 backdrop-blur-sm shadow-[0_0_40px_rgba(0,0,0,0.24)] transition-transform duration-700 transform ${
                         isReversed
-                          ? "lg:[transform:perspective(1200px)_rotateY(-17deg)_translateY(0)] lg:group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)]"
-                          : "lg:[transform:perspective(1200px)_rotateY(17deg)_translateY(0)] lg:group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)]"
+                          ? "[transform:perspective(1200px)_rotateY(-17deg)_translateY(0)] group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)] group-active:[transform:perspective(1200px)_rotateY(0deg)_translateY(-6px)]"
+                          : "[transform:perspective(1200px)_rotateY(17deg)_translateY(0)] group-hover:[transform:perspective(1200px)_rotateY(0deg)_translateY(-10px)] group-active:[transform:perspective(1200px)_rotateY(0deg)_translateY(-6px)]"
                       }`}
                     >
                       <img

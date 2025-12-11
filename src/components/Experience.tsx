@@ -77,17 +77,17 @@ const Experience = () => {
       <div className="max-w-4xl cursor-default mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center">Experience</h2>
 
-        <div className="flex items-center justify-center gap-4 mb-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-4 px-4">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 text-sm md:text-base transition-all rounded-md ${
+                className={`px-5 py-2 text-sm md:text-base transition-all rounded-md border ${
                   isActive
-                    ? "bg-[#151515] text-foreground shadow-[0_0_30px_rgba(0,0,0,0.15)]"
-                    : "text-foreground/80 hover:bg-[#151515]"
+                    ? "bg-[#151515] text-primary border-primary/50 shadow-[0_0_28px_rgba(255,255,255,0.08)]"
+                    : "text-foreground/80 border-border/60 bg-card/40 hover:bg-[#151515]/70"
                 }`}
               >
                 {tab.label}
