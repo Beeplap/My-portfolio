@@ -77,14 +77,14 @@ const Experience = () => {
       <div className="max-w-4xl cursor-default mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center">Experience</h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-4 px-4">
+        <div className="flex flex-nowrap items-center justify-center gap-2 mb-4 px-2">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2 text-sm md:text-base transition-all rounded-md border ${
+                className={`px-3 py-2 text-xs sm:text-sm md:text-base transition-all rounded-md border whitespace-nowrap ${
                   isActive
                     ? "bg-[#151515] text-primary border-primary/50 shadow-[0_0_28px_rgba(255,255,255,0.08)]"
                     : "text-foreground/80 border-border/60 bg-card/40 hover:bg-[#151515]/70"
