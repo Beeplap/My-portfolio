@@ -96,18 +96,18 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:underline text-sm md:text-base"
+                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 hover:bg-primary/10 px-2 py-1 rounded-md -mx-2 -my-1"
                     >
-                      <Globe className="h-4 w-4" />
+                      <Globe className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
                       Visit site
                     </a>
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-primary hover:underline text-sm md:text-base"
+                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 hover:bg-primary/10 px-2 py-1 rounded-md -mx-2 -my-1"
                     >
-                      <Github className="h-4 w-4" />
+                      <Github className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
                       GitHub
                     </a>
                   </div>
