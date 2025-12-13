@@ -78,8 +78,8 @@ const Projects = () => {
 
                 {/* Text content */}
                 <div className="w-full lg:w-1/2 cursor-default flex flex-col justify-center">
-                  <h3 className="text-3xl md:text-4xl font-semibold mb-4">{project.title}</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-6 text-lg md:text-xl">{project.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold mb-4">{project.title}</h3>
+                  <p className="text-foreground/80 leading-relaxed mb-6 text-sm md:text-base">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
