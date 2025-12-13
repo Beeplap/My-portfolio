@@ -100,8 +100,7 @@ const Experience = () => {
           <div className="space-y-10">
             {entries.map((entry, index) => (
               <div key={entry.title} className={index !== entries.length - 1 ? "pb-8 border-b border-border/60" : ""}>
-                <div className="flex items-center gap-2 text-primary mb-4">
-                  <span className="h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_hsl(var(--primary)/0.7)]" />
+                <div className="mb-4">
                   <h3 className="text-lg md:text-xl font-semibold text-foreground">{entry.title}</h3>
                 </div>
 
