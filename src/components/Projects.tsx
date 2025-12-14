@@ -84,7 +84,7 @@ const Projects = () => {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="px-4 py-1.5 text-sm md:text-base bg-primary/20 text-foreground font-medium rounded-full"
+                        className="px-4 py-1.5 text-sm md:text-base bg-primary/5 text-foreground font-medium rounded-full"
                       >
                         {tech}
                       </span>
@@ -96,7 +96,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 hover:bg-primary/10 px-2 py-1 rounded-md -mx-2 -my-1"
+                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
                     >
                       <Globe className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
                       Visit site
@@ -105,7 +105,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 hover:bg-primary/10 px-2 py-1 rounded-md -mx-2 -my-1"
+                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
                     >
                       <Github className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
                       GitHub
