@@ -59,7 +59,7 @@ const Projects = () => {
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="block w-full h-full object-cover"
+                        className="block w-full h-full object-cover brightness-75 transition-all duration-400 group-hover:brightness-100"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-400">
