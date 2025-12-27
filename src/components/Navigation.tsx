@@ -38,7 +38,6 @@ const Navigation = () => {
     setIsMobileMenuOpen(false)
   }
 
-  // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => {
@@ -149,7 +148,7 @@ const Navigation = () => {
         
         <div className="flex items-center gap-4">
           <img
-            src="/assets/beeplap.jpg"
+            src="/assets/beep.jpg"
             alt="Beeplap Gharti Magar Profile"
             className="w-10 h-10 rounded-full object-cover border border-white/20 transition-all duration-300 hover:border-white/40 hover:scale-105"
           />
