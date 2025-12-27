@@ -72,33 +72,33 @@ const Experience = () => {
 
   const entries = getEntries();
 
-return (
-  <section id="experience" className="py-6 px-4 scroll-mt-28">
-    <div className="max-w-3xl cursor-default mx-auto">
+  return (
+    <section id="experience" className="py-6 px-4 scroll-mt-28">
+      <div className="max-w-3xl cursor-default mx-auto">
 
-      <div className="flex flex-nowrap items-center justify-center gap-2 mb-4 px-2">
-        {tabs.map((tab) => {
-          const isActive = activeTab === tab.id;
-          return (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-3 py-2 text-xs sm:text-sm md:text-base transition-all rounded-md border whitespace-nowrap ${
-                isActive
-                  ? "bg-[#151515] text-primary border-primary/50 shadow-[0_0_28px_rgba(255,255,255,0.08)]"
-                  : "text-foreground/80 border-border/60 bg-card/40 hover:bg-[#151515]/70"
-              }`}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
+        <div className="flex flex-nowrap items-center justify-center gap-2 mb-4 px-2">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-3 py-2 text-xs sm:text-sm md:text-base transition-all rounded-xl border border-white/10  whitespace-nowrap ${isActive
+                  ? "bg-white/10 text-white shadow-inner"
+                  : "text-white/60 hover:text-white"
+                  }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
 
-        <div className="rounded-3xl border border-border/60 bg-card/70 backdrop-blur-sm shadow-[0_0_40px_hsl(var(--primary)/0.08)] p-6 md:p-8">
+
+        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] backdrop-blur-xl shadow-[0_0_60px_rgba(255,255,255,0.04)] p-8 md:p-10">
           <div className="space-y-10">
             {entries.map((entry, index) => (
-              <div key={entry.title} className={index !== entries.length - 1 ? "pb-8 border-b border-border/60" : ""}>
+              <div key={entry.title} className={index !== entries.length - 1 ? "pb-10" : ""}>
                 <div className="mb-4">
                   <h3 className="text-lg md:text-xl font-semibold text-foreground">{entry.title}</h3>
                 </div>
