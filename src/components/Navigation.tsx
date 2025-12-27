@@ -144,7 +144,8 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] sm:w-auto">
-      <div className="relative flex items-center gap-8 px-6 py-3 bg-black/30 border border-white/10 rounded-full backdrop-blur-xl shadow-lg overflow-hidden">
+      <div className="relative flex items-center gap-8 px-8 py-4 bg-black/30 border-2 border-[#364153] rounded-full backdrop-blur-xl shadow-lg overflow-hidden">
+
         
         <div className="flex items-center gap-4">
           <img

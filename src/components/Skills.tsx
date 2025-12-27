@@ -4,18 +4,18 @@ const Skills = () => {
       title: "Frontend Development",
       exp: [
         "HTML",
-        "CSS",
         "Javascript",
         "Typescript",
         "React",
         "TailwindCSS",
+        "NextJS",
       ],
     },
     {
       title: "Backend Development",
       exp: [
         "Python",
-        "Typescript",
+        "Supabase",
         "Java",
         "PHP",
         "PostgreSQL",
@@ -34,8 +34,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4">
-      <div className="max-w-5xl mx-auto">
+    <section id="skills" className="py-14 px-4 scroll-mt-28">
+      <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
           Skills
         </h2>

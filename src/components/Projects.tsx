@@ -34,7 +34,7 @@ const projects: Project[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-4 bg-background">
+    <section id="projects" className="py-20 px-4 bg-background scroll-mt-28">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl cursor-default font-bold mb-14 text-center">Projects</h2>
 
