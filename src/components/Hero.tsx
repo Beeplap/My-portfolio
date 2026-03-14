@@ -25,7 +25,6 @@ const Hero = () => {
       <div className="max-w-3xl mx-auto">
         <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_30px_hsl(var(--primary)/0.06)] p-5 md:p-7">
           <div className="flex flex-col cursor-default gap-4">
-            {/* Top row: avatar, name, role */}
             <div className="flex items-center gap-4 md:gap-5">
               <img
                 src="/assets/beeo.jpg"
@@ -38,17 +37,14 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Greeting headline */}
             <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
               {getGreeting()}, I'm Beeplap!
             </h1>
 
-            {/* Description */}
             <p className="text-sm md:text-base text-foreground/90 leading-relaxed max-w-3xl">
               A passionate Nepali software developer studying BCA, fluent in English and Nepali. I'm a full stack developer with a love for building innovative web applications and mobile apps that make a difference.
             </p>
 
-            {/* Social icons row */}
             <div className="flex items-center justify-center gap-2 md:gap-3 pt-1">
               <a
                 href="https://github.com/beeplap"
@@ -60,7 +56,7 @@ const Hero = () => {
                 <Github className="h-4.5 w-4.5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/beeplap-gharti-magar-5027592b9/"
+                href="www.linkedin.com/in/beeplap"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
