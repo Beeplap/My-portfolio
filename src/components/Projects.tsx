@@ -9,6 +9,7 @@ type Project = {
   link: string;
   github: string;
   image: string;
+  githubNote?: string;
 };
 
 const projects: Project[] = [
@@ -28,7 +29,18 @@ const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     link: "https://www.arvindpandey.com.np",
     github: "https://github.com/beeplap/client_site",
-    image: "/assets/arvind.png", 
+    image: "/assets/arvind.png",
+    
+  },
+  {
+    title: "Avenue Website",
+    description:
+      "A modern marketing website for Avenue with responsive design and smooth animations, highlighting key services and brand identity.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    link: "https://avenue-website-three.vercel.app/",
+    github: "#",
+    image: "/assets/avenue.png",
+    githubNote: "For client privacy, this repository is private.",
   },
 ];
 
@@ -91,25 +103,32 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="mt-6 flex gap-3">
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
-                    >
-                      <Globe className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
-                      Visit site
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
-                    >
-                      <Github className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
-                      GitHub
-                    </a>
+                  <div className="mt-6 flex flex-col gap-2">
+                    <div className="flex gap-3">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
+                      >
+                        <Globe className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                        Visit site
+                      </a>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 text-primary text-sm md:text-base transition-all duration-200 bg-primary/10 hover:bg-primary/15 px-3 py-1.5 rounded-md"
+                      >
+                        <Github className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                        GitHub
+                      </a>
+                    </div>
+                    {project.githubNote && (
+                      <p className="text-xs md:text-sm text-foreground/60">
+                        {project.githubNote}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
