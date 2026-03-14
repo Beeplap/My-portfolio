@@ -47,9 +47,16 @@ const Navigation = () => {
 
       if (sections.length === 0) return
 
-      const scrollPosition = window.scrollY
       const windowHeight = window.innerHeight
+      const scrollPosition = window.scrollY
+      const docHeight = document.documentElement.scrollHeight
       let activeIndex = 0
+
+      // If user is at (or very near) the bottom of the page, force Contact as active
+      if (scrollPosition + windowHeight >= docHeight - 40) {
+        setActiveIndex(navItems.length - 1)
+        return
+      }
 
       // Find the section that's most visible in the viewport
       for (let i = 0; i < sections.length; i++) {
@@ -63,10 +70,6 @@ const Navigation = () => {
           if (sectionTop <= windowHeight / 2 && sectionBottom >= windowHeight / 2) {
             activeIndex = i
             break
-          }
-          // If we've scrolled past the middle of the viewport and this section is above it
-          if (sectionTop <= windowHeight / 2 && i === sections.length - 1) {
-            activeIndex = i
           }
         }
       }
