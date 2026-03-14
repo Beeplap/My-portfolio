@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Facebook } from "lucide-react";
 
 
 const Hero = () => {
@@ -75,6 +75,15 @@ const Hero = () => {
                 className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
               >
                 <Mail className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href="https://www.facebook.com/beeplap.g.magar"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="h-9 w-9 rounded-full border border-border/70 bg-background/60 flex items-center justify-center hover:shadow-[0_0_18px_hsl(var(--primary)/0.22)] transition-shadow"
+              >
+                <Facebook className="h-4.5 w-4.5" />
               </a>
             </div>
           </div>
