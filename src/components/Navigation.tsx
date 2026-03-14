@@ -43,7 +43,7 @@ const Navigation = () => {
       const sections = navItems.map(item => {
         const id = item.href.replace('#', '')
         return document.getElementById(id)
-      }).filter(Boolean) // Remove null sections
+      }).filter(Boolean) 
 
       if (sections.length === 0) return
 
@@ -52,13 +52,11 @@ const Navigation = () => {
       const docHeight = document.documentElement.scrollHeight
       let activeIndex = 0
 
-      // If user is at (or very near) the bottom of the page, force Contact as active
       if (scrollPosition + windowHeight >= docHeight - 40) {
         setActiveIndex(navItems.length - 1)
         return
       }
 
-      // Find the section that's most visible in the viewport
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i]
         if (section) {
@@ -66,7 +64,6 @@ const Navigation = () => {
           const sectionTop = rect.top
           const sectionBottom = rect.bottom
 
-          // If the section is in the viewport (even partially)
           if (sectionTop <= windowHeight / 2 && sectionBottom >= windowHeight / 2) {
             activeIndex = i
             break
@@ -77,7 +74,6 @@ const Navigation = () => {
       setActiveIndex(activeIndex)
     }
 
-    // Add throttling to improve performance
     let ticking = false
     const throttledScroll = () => {
       if (!ticking) {
@@ -105,10 +101,8 @@ const Navigation = () => {
       setPositions(rects)
     }
 
-    // Initial measure after next frame to ensure layout is stable
     const rafId = requestAnimationFrame(measure)
 
-    // Re-measure after fonts load (first visit issue)
     const fontsReady: Promise<FontFaceSet> | undefined =
       typeof document !== "undefined" && "fonts" in document
         ? (document as Document & { fonts: FontFaceSet }).fonts.ready
@@ -121,7 +115,6 @@ const Navigation = () => {
       fontsThenCleanup = () => {}
     }
 
-    // Observe size changes of the nav container
     let resizeObserver: ResizeObserver | null = null
     if (typeof ResizeObserver !== 'undefined' && navRef.current) {
       resizeObserver = new ResizeObserver(() => {
@@ -130,7 +123,6 @@ const Navigation = () => {
       resizeObserver.observe(navRef.current)
     }
 
-    // Window resize
     const onResize = () => requestAnimationFrame(measure)
     window.addEventListener('resize', onResize)
 
@@ -157,7 +149,6 @@ const Navigation = () => {
           />
         </div>
 
-        {/* Status display for mobile only */}
         <div className="md:hidden absolute left-1/2 -translate-x-1/2 flex items-center gap-2">
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -173,9 +164,7 @@ const Navigation = () => {
           role="navigation"
           aria-label="Main navigation"
         >
-          {/* Unified dynamic highlighter */}
           {(() => {
-            // Determine which index to highlight (hover takes priority over active)
             const highlightIndex = hoverIndex !== null ? hoverIndex : activeIndex
             const isHovering = hoverIndex !== null
             
@@ -220,7 +209,6 @@ const Navigation = () => {
           })}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="ml-auto md:ml-0 md:hidden text-white hover:text-white/80 transition-colors p-2 rounded-lg hover:bg-white/10"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -231,7 +219,6 @@ const Navigation = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden origin-top transition-all duration-300 ease-in-out ${
           isMobileMenuOpen
