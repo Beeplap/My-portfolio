@@ -35,9 +35,9 @@ const projects: Project[] = [
   {
     title: "Avenue Website",
     description:
-      "A modern marketing website for Avenue with responsive design and smooth animations, highlighting key services and brand identity.",
+      "A modern marketing website for Avenue Butwal Education Consultancy with responsive design and smooth animations, highlighting key services and brand identity.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://avenue-website-three.vercel.app/",
+    link: "https://www.avenuebutwal.edu.np/",
     github: "#",
     image: "/assets/avenue.png",
     githubNote: "For client privacy, this repository is private.",
