@@ -210,7 +210,7 @@ const Navigation = () => {
         </div>
 
         <button
-          className="ml-auto md:ml-0 md:hidden text-white hover:text-white/80 transition-colors p-2 rounded-lg hover:bg-white/10"
+          className="ml-auto md:ml-0 md:hidden text-white hover:text-white/90 transition-colors p-2 rounded-lg bg-black/55 supports-[backdrop-filter]:bg-black/40 border border-white/15 hover:bg-black/65"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isMobileMenuOpen}
@@ -220,13 +220,13 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`md:hidden origin-top transition-all duration-300 ease-in-out ${
+        className={`md:hidden mt-3 origin-top transform-gpu will-change-[opacity,transform] transition-[opacity,transform] duration-250 ease-out ${
           isMobileMenuOpen
-            ? "opacity-100 translate-y-0 mt-3 max-h-[420px] pointer-events-auto"
-            : "opacity-0 -translate-y-2 max-h-0 overflow-hidden pointer-events-none"
+            ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto"
+            : "opacity-0 -translate-y-1 scale-y-95 pointer-events-none"
         }`}
       >
-        <div className="bg-black/40 border border-white/10 backdrop-blur-xl rounded-2xl p-4 shadow-lg">
+        <div className="rounded-2xl border border-white/10 bg-black/70 p-4 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-black/45">
           {navItems.map((item, index) => (
             <a
               key={item.name}

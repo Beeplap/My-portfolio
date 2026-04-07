@@ -82,7 +82,7 @@ const Experience = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`w-full rounded-2xl border border-white/10 px-3 py-3 text-center text-sm transition-all whitespace-nowrap md:text-base ${
+                className={`w-full rounded-2xl border border-white/10 px-3 py-3 text-center text-xs transition-all whitespace-nowrap sm:text-sm md:text-base ${
                   isActive
                     ? "bg-white/10 text-white shadow-inner"
                     : "text-white/60 hover:text-white"
