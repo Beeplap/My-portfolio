@@ -32,7 +32,7 @@ const Hero = () => {
                 className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover transition-transform duration-300 hover:scale-105"
               />
               <div>
-                <p className="text-xl md:text-2xl font-semibold text-[hsl(var(--primary))]">Beeplap</p>
+                <p className="text-xl md:text-2xl font-semibold text-[hsl(var(--primary))]">Beeplap Gharti Magar</p>
                 <p className="text-sm md:text-base text-foreground/80">Full Stack Developer</p>
               </div>
             </div>
