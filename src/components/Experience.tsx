@@ -73,13 +73,16 @@ const Experience = () => {
   const entries = getEntries();
 
   return (
-    <section id="experience" className="px-4 py-10 scroll-mt-28 md:py-12">
+    <section id="experience" className="px-4 pb-14 pt-4 scroll-mt-28 md:pb-16 md:pt-6">
       <div className="mx-auto w-full max-w-[1008px] cursor-default">
-        <div className="relative mb-6 hidden h-20 md:block">
-          <div className="absolute left-1/2 top-0 h-12 w-px -translate-x-1/2 bg-gradient-to-b from-cyan-200/0 via-cyan-100/90 to-cyan-200/0" />
-          <div className="absolute left-1/2 top-5 h-5 w-5 -translate-x-1/2 rounded-full bg-cyan-100/70 blur-[10px]" />
-          <div className="absolute left-1/2 top-12 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-          <div className="absolute left-1/2 top-12 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/20 to-transparent blur-sm" />
+        <div className="relative mb-6 hidden h-28 -translate-y-4 md:block">
+          <div className="absolute left-1/2 top-0 h-20 w-px -translate-x-1/2 bg-cyan-100/25" />
+          <div className="absolute left-1/2 top-20 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <div className="absolute left-1/2 top-20 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/15 to-transparent blur-sm" />
+          <div className="experience-beam-drop absolute left-1/2 top-0 h-20 w-px -translate-x-1/2 bg-cyan-50 shadow-[0_0_10px_hsl(182_100%_85%_/0.55)]" />
+          <div className="experience-beam-node absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 rounded-full bg-cyan-50 blur-[8px]" />
+          <div className="experience-line-spread absolute left-1/2 top-20 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-50 to-transparent" />
+          <div className="experience-line-spread-glow absolute left-1/2 top-20 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-100/80 to-transparent blur-[3px]" />
         </div>
 
         <div className="mb-4 grid w-full grid-cols-3 gap-3">
