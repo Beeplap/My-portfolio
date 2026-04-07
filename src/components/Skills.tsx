@@ -38,7 +38,7 @@ const Skills = () => {
           </div>
 
           <div className="relative rounded-[26px] border border-[hsl(172_100%_30%_/0.42)] bg-[hsl(220_14%_8%_/0.92)] p-6 shadow-[0_0_45px_hsl(172_100%_30%_/0.24)] md:p-8">
-            <div className="max-w-4xl cursor-default space-y-4 text-sm leading-7 text-foreground/95 md:text-base">
+            <div className="w-full cursor-default space-y-4 text-sm leading-7 text-foreground/95 md:max-w-[80%] md:text-base">
               <p>
                 I primarily work on websites on both the frontend and the
                 backend.
@@ -59,7 +59,9 @@ const Skills = () => {
               </p>
 
               <a
-                href="mailto:ghartibeeplap@gmail.com?subject=Resume%20Request"
+                href="/assets/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex rounded-full bg-white px-7 py-2 text-sm font-semibold text-black transition-transform duration-200 hover:scale-[1.02] hover:bg-white/95 md:text-base"
               >
                 View Resume

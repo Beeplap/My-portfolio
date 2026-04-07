@@ -74,26 +74,25 @@ const Experience = () => {
 
   return (
     <section id="experience" className="py-6 px-4 scroll-mt-28">
-      <div className="max-w-3xl cursor-default mx-auto">
-
-        <div className="flex flex-nowrap items-center justify-center gap-2 mb-4 px-2">
+      <div className="mx-auto w-full max-w-[1008px] cursor-default">
+        <div className="mb-4 grid w-full grid-cols-3 gap-3">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 py-2 text-xs sm:text-sm md:text-base transition-all rounded-xl border border-white/10  whitespace-nowrap ${isActive
-                  ? "bg-white/10 text-white shadow-inner"
-                  : "text-white/60 hover:text-white"
-                  }`}
+                className={`w-full rounded-2xl border border-white/10 px-3 py-3 text-center text-sm transition-all whitespace-nowrap md:text-base ${
+                  isActive
+                    ? "bg-white/10 text-white shadow-inner"
+                    : "text-white/60 hover:text-white"
+                }`}
               >
                 {tab.label}
               </button>
             );
           })}
         </div>
-
 
         <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] backdrop-blur-xl shadow-[0_0_60px_rgba(255,255,255,0.04)] p-8 md:p-10">
           <div className="space-y-10">
