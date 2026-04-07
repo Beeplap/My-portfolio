@@ -42,7 +42,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-sm md:text-base text-foreground/90 leading-relaxed max-w-3xl">
-              A passionate Nepali software developer studying BCA, fluent in English and Nepali. I'm a full stack developer with a love for building innovative web applications and mobile apps that make a difference.
+              I'm a Nepali software developer studying BCA, fluent in English, Nepali and Hindi. I'm a full stack developer with a love for building innovative web applications and mobile apps that make a difference.
             </p>
 
             <div className="flex items-center justify-center gap-2 md:gap-3 pt-1">

@@ -1,21 +1,4 @@
-import type { SVGProps } from "react";
 import { Facebook, Github, Linkedin } from "lucide-react";
-
-const CodebergIcon = ({ className, ...props }: SVGProps<SVGSVGElement>) => (
-  <svg
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    aria-hidden="true"
-    {...props}
-  >
-    <path
-      d="M16.05 5.4C15.53 5.4 15.06 5.73 14.87 6.21L7.67 24.46C7.35 25.28 8.15 26.06 8.95 25.69L14.72 23.05C15.55 22.67 16.51 22.67 17.33 23.05L23.11 25.69C23.91 26.06 24.71 25.28 24.38 24.46L17.18 6.21C16.99 5.73 16.53 5.4 16.05 5.4Z"
-      fill="currentColor"
-    />
-  </svg>
-);
 
 const Contact = () => {
   const openMailClient = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -35,7 +18,7 @@ const Contact = () => {
     {
       name: "Codeberg",
       href: "https://codeberg.org/beeplap",
-      icon: CodebergIcon,
+      icon: "codeberg",
     },
     {
       name: "LinkedIn",
@@ -93,7 +76,15 @@ const Contact = () => {
                     aria-label={name}
                     className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-black text-white shadow-[0_0_0_hsl(182_100%_65%_/0)] transition-all duration-200 hover:scale-105 hover:border-cyan-300/35 hover:bg-[hsl(220_14%_10%)] hover:shadow-[0_0_18px_hsl(182_100%_65%_/0.18)]"
                   >
-                    <Icon className="h-5 w-5" strokeWidth={2.1} />
+                    {Icon === "codeberg" ? (
+                      <img
+                        src="/assets/codeberg-dark.svg"
+                        alt=""
+                        className="h-5 w-5"
+                      />
+                    ) : (
+                      <Icon className="h-5 w-5" strokeWidth={2.1} />
+                    )}
                   </a>
                 ))}
               </div>

@@ -73,8 +73,15 @@ const Experience = () => {
   const entries = getEntries();
 
   return (
-    <section id="experience" className="py-6 px-4 scroll-mt-28">
+    <section id="experience" className="px-4 py-10 scroll-mt-28 md:py-12">
       <div className="mx-auto w-full max-w-[1008px] cursor-default">
+        <div className="relative mb-6 hidden h-20 md:block">
+          <div className="absolute left-1/2 top-0 h-12 w-px -translate-x-1/2 bg-gradient-to-b from-cyan-200/0 via-cyan-100/90 to-cyan-200/0" />
+          <div className="absolute left-1/2 top-5 h-5 w-5 -translate-x-1/2 rounded-full bg-cyan-100/70 blur-[10px]" />
+          <div className="absolute left-1/2 top-12 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+          <div className="absolute left-1/2 top-12 h-px w-[74%] -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/20 to-transparent blur-sm" />
+        </div>
+
         <div className="mb-4 grid w-full grid-cols-3 gap-3">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
