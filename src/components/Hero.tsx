@@ -23,7 +23,7 @@ const Hero = () => {
   return (
     <section id="home" className="px-4 py-6 md:py-6 scroll-mt-36">
       <div className="max-w-3xl mx-auto">
-        <div className="rounded-3xl border border-border/60 bg-card/60 backdrop-blur-sm shadow-[0_0_30px_hsl(var(--primary)/0.06)] p-5 md:p-7">
+        <div className="rounded-3xl border border-[hsl(172_100%_30%_/0.2)] bg-card/60 backdrop-blur-sm shadow-[0_0_0_1px_hsl(172_100%_30%_/0.05),0_0_60px_hsl(172_100%_30%_/0.12),0_0_120px_hsl(172_100%_30%_/0.08)] p-5 md:p-7">
           <div className="flex flex-col cursor-default gap-4">
             <div className="flex items-center gap-4 md:gap-5">
               <img
@@ -38,7 +38,7 @@ const Hero = () => {
             </div>
 
             <h1 className="text-2xl md:text-4xl font-bold tracking-tight">
-              {getGreeting()}, I'm Beeplap!
+              {getGreeting()}!
             </h1>
 
             <p className="text-sm md:text-base text-foreground/90 leading-relaxed max-w-3xl">
