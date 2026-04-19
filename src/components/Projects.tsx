@@ -39,7 +39,7 @@ const projects: Project[] = [
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
     link: "https://www.avenuebutwal.edu.np/",
     github: "#",
-    image: "/assets/avenue.png",
+    image: "/assets/avenue.jpg",
     githubNote: "For client privacy, this repository is private.",
   },
 ];
