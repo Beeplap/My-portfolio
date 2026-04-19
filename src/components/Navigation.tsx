@@ -220,13 +220,14 @@ const Navigation = () => {
       </div>
 
       <div
-        className={`md:hidden mt-3 origin-top transform-gpu will-change-[opacity,transform] transition-[opacity,transform] duration-250 ease-out ${
+        aria-hidden={!isMobileMenuOpen}
+        className={`md:hidden origin-top transform-gpu overflow-hidden transition-[opacity,transform,max-height,margin] duration-200 ease-out ${
           isMobileMenuOpen
-            ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto"
-            : "opacity-0 -translate-y-1 scale-y-95 pointer-events-none"
+            ? "mt-3 max-h-[min(85vh,28rem)] translate-y-0 scale-y-100 opacity-100 pointer-events-auto"
+            : "mt-0 max-h-0 -translate-y-1 scale-y-95 opacity-0 pointer-events-none p-0"
         }`}
       >
-        <div className="rounded-2xl border border-white/10 bg-black/70 p-4 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-black/45">
+        <div className="rounded-2xl border border-white/15 bg-black/92 p-4 shadow-lg backdrop-blur-xl supports-[backdrop-filter]:bg-black/88">
           {navItems.map((item, index) => (
             <a
               key={item.name}
