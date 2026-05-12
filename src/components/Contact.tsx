@@ -47,7 +47,7 @@ const Contact = () => {
               Beeplap Gharti Magar
             </h2>
             <p className="mt-3 text-base text-foreground/95 md:text-xl">
-              Software Developer & Content Creator
+              Software Developer | Open Source Enthusiast
             </p>
 
             <div className="mt-8 flex w-full flex-col items-center gap-5 md:flex-row md:justify-center md:gap-8">

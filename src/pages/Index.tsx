@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ChevronUp } from "lucide-react";
 
+
 const Index = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
