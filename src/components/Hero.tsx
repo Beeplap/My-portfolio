@@ -19,7 +19,7 @@ const Hero = () => {
       return "Good evening";
     }
   };
-
+   
   return (
     <section id="home" className="px-4 pb-0 pt-6 md:pt-6 scroll-mt-36">
       <div className="mx-auto w-full max-w-[1008px]">
