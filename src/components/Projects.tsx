@@ -1,48 +1,7 @@
 "use client";
 
 import { Github, Globe } from "lucide-react";
-
-type Project = {
-  title: string;
-  description: string;
-  tech: string[];
-  link: string;
-  github: string;
-  image: string;
-  githubNote?: string;
-};
-
-const projects: Project[] = [
-  {
-    title: "ScholarSync",
-    description:
-      "A comprehensive Student management system with real-time tracking, analytics dashboard, and automated reporting for teams.",
-    tech: ["React", "Supabase", "Tailwind CSS"],
-    link: "https://student-management-bzx9.vercel.app/login",
-    github: "https://github.com/beeplap/studentManagement",
-    image: "/assets/scholar.png",
-  },
-  {
-    title: "Client Portfolio Site",
-    description:
-      "A custom portfolio website built with Next.js, optimized for SEO and performance, showcasing the client's work with a CMS-driven content flow.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://www.arvindpandey.com.np",
-    github: "https://github.com/beeplap/client_site",
-    image: "/assets/arvind.png",
-    
-  },
-  {
-    title: "Avenue Website",
-    description:
-      "A modern marketing website for Avenue Butwal Education Consultancy with responsive design and smooth animations, highlighting key services and brand identity.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://www.avenuebutwal.edu.np/",
-    github: "#",
-    image: "/assets/avenue.jpg",
-    githubNote: "For client privacy, this repository is private.",
-  },
-];
+import { projects } from "@/data/projects";
 
 const Projects = () => {
   return (
@@ -55,7 +14,7 @@ const Projects = () => {
             const isReversed = idx % 2 === 1;
             return (
               <div
-                key={project.title}
+                key={project.id}
                 className={`flex flex-col gap-10 items-center lg:items-stretch ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"}`}
               >
                 {/* Image card */}
