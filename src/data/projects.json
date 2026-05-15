@@ -2,7 +2,7 @@
   {
     "id": "4785988b-5789-4946-9974-26bdaa4418a3",
     "title": "OpenDocs",
-    "description": "OpenDocs is a browser-based document workspace for scanning, organizing, editing, compressing, converting, and merging files. It lets users upload images or PDFs, crop and reorder pages, preview layouts, and export polished PDF documents directly from the browser. The app also includes PDF merging, file compression, image conversion, and temporary Supabase-backed session cleanup for uploaded scan pages, making it useful for quick document preparation without a heavy desktop tool.",
+    "description": "OpenDocs is a client-side opensource document workspace for document formatting and managing.",
     "tech": [
       "Next.js",
       "Supabase",

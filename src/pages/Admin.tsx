@@ -107,7 +107,7 @@ const Admin = () => {
         setProjects(freshProjects.map(toFormProject));
         setActiveId(freshProjects[0]?.id ?? "");
       } catch {
-        setStatus("Local save API is available only while running the Vite dev server.");
+        setStatus("Local save API is available only while running the dev server.");
       }
     };
 
