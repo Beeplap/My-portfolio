@@ -1,5 +1,18 @@
 [
   {
+    "id": "cfebac93-bd96-4de6-8e50-297d133eeb84",
+    "title": "Greenstar Suppliers",
+    "description": "Client portfolio website for their business showcase and contacts.",
+    "tech": [
+      "Next.js",
+      "Supabase",
+      "Tailwind"
+    ],
+    "link": "https://www.greenstarsuppliers.com.np/",
+    "github": "#",
+    "image": "/assets/greenstar-suppliers-1780919736234.png"
+  },
+  {
     "id": "c2705eae-371b-44f5-bbdc-46ecbcf6db1d",
     "title": "Yarsa Byte",
     "description": "Self made and co-developed startup project which serves users with tech related stuffs. Like building portfolio websites, social media handling, graphics designing, mobile apps etc.",
