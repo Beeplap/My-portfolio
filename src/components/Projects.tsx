@@ -1,16 +1,20 @@
 "use client";
 
+import { useState } from "react";
 import { Github, Globe } from "lucide-react";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section id="projects" className="py-20 px-4 bg-background scroll-mt-28">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl cursor-default mb-14 text-center">Projects</h2>
 
         <div className="space-y-16">
-          {projects.map((project, idx) => {
+          {visibleProjects.map((project, idx) => {
             const isReversed = idx % 2 === 1;
             return (
               <div
@@ -94,6 +98,17 @@ const Projects = () => {
             );
           })}
         </div>
+
+        {projects.length > 4 && (
+          <div className="mt-16 flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-8 py-3 rounded-full border border-foreground/30 bg-foreground/5 text-foreground text-sm font-medium hover:bg-foreground/10 hover:border-foreground/50 transition-all duration-300 backdrop-blur-sm"
+            >
+              {showAll ? "See Less" : "See More"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

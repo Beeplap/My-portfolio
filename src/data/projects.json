@@ -1,5 +1,46 @@
 [
   {
+    "id": "avenue-website",
+    "title": "Avenue Website",
+    "description": "A modern marketing website for Avenue Butwal Education Consultancy with responsive design and smooth animations, highlighting key services and brand identity.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "link": "https://www.avenuebutwal.edu.np/",
+    "github": "#",
+    "image": "/assets/avenue.jpg",
+    "githubNote": "For client privacy, this repository is private."
+  },
+  {
+    "id": "c2705eae-371b-44f5-bbdc-46ecbcf6db1d",
+    "title": "Yarsha Byte",
+    "description": "Self made and co-developed startup project which serves users with tech related stuffs. Like building portfolio websites, social media handling, graphics designing, mobile apps etc.",
+    "tech": [
+      "React",
+      "Next.js",
+      "Supabase"
+    ],
+    "link": "https://yarshabyte.vercel.app/",
+    "github": "#",
+    "image": "/assets/yarsha.png",
+    "githubNote": "Repo is kept private, as website is for commercial use"
+  },
+   {
+    "id": "4785988b-5789-4946-9974-26bdaa4418a3",
+    "title": "OpenDocs",
+    "description": "OpenDocs is a client-side opensource document workspace for document formatting and managing.",
+    "tech": [
+      "Next.js",
+      "Supabase",
+      "Typescript"
+    ],
+    "link": "https://free-scanner.vercel.app/",
+    "github": "https://github.com/Beeplap/openDocs",
+    "image": "/assets/opendocs-1778757839888.png"
+  }, 
+  {
     "id": "148d1977-391a-4d5e-ab66-d18472c0591a",
     "title": "United Co. Ltd.",
     "description": "Client portfolio website from from abroad.",
@@ -26,46 +67,8 @@
     "github": "#",
     "image": "/assets/greenstar-suppliers-1780919736234.png"
   },
-  {
-    "id": "c2705eae-371b-44f5-bbdc-46ecbcf6db1d",
-    "title": "Yarsha Byte",
-    "description": "Self made and co-developed startup project which serves users with tech related stuffs. Like building portfolio websites, social media handling, graphics designing, mobile apps etc.",
-    "tech": [
-      "React",
-      "Next.js",
-      "Supabase"
-    ],
-    "link": "https://yarshabyte.vercel.app/",
-    "github": "#",
-    "image": "/assets/yarsha.png",
-    "githubNote": "Repo is kept private, as website is for commercial use"
-  },
-  {
-    "id": "4785988b-5789-4946-9974-26bdaa4418a3",
-    "title": "OpenDocs",
-    "description": "OpenDocs is a client-side opensource document workspace for document formatting and managing.",
-    "tech": [
-      "Next.js",
-      "Supabase",
-      "Typescript"
-    ],
-    "link": "https://free-scanner.vercel.app/",
-    "github": "https://github.com/Beeplap/openDocs",
-    "image": "/assets/opendocs-1778757839888.png"
-  }, {
-    "id": "avenue-website",
-    "title": "Avenue Website",
-    "description": "A modern marketing website for Avenue Butwal Education Consultancy with responsive design and smooth animations, highlighting key services and brand identity.",
-    "tech": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "link": "https://www.avenuebutwal.edu.np/",
-    "github": "#",
-    "image": "/assets/avenue.jpg",
-    "githubNote": "For client privacy, this repository is private."
-  },
+  
+ 
   {
     "id": "scholarsync",
     "title": "ScholarSync",
