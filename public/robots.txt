@@ -1,42 +1,11 @@
-# Robots.txt for Beeplap Portfolio
-# Last updated: 2025-10-29
+# Robots.txt for beeplap.com.np
+# Updated: 2026-07-19
 
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-# Social media crawlers
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-# Allow all other bots
+# Allow all crawlers access to the public site
 User-agent: *
 Allow: /
-
-# Crawl-delay: 10  # Optional: uncomment and tune if your server is small
+Disallow: /login
+Disallow: /admin
 
 # Sitemap location
 Sitemap: https://beeplap.com.np/sitemap.xml
-
-# End of robots.txt

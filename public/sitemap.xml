@@ -1,46 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Homepage -->
+  <!-- Homepage (main entry) -->
   <url>
     <loc>https://beeplap.com.np/</loc>
-    <lastmod>2025-12-29</lastmod>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Projects page -->
+  <!-- Section: Experience -->
   <url>
-    <loc>https://beeplap.com.np/projects</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://beeplap.com.np/#experience</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Section: Projects -->
+  <url>
+    <loc>https://beeplap.com.np/#projects</loc>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- About page -->
+  <!-- Section: Skills -->
   <url>
-    <loc>https://beeplap.com.np/about</loc>
-    <lastmod>2025-12-29</lastmod>
+    <loc>https://beeplap.com.np/#skills</loc>
+    <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Contact page -->
-  <url>
-    <loc>https://beeplap.com.np/contact</loc>
-    <lastmod>2025-12-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Optional: Blog or notes section (if you add later) -->
-  <!--
-  <url>
-    <loc>https://beeplap.com.np/blog</loc>
-    <lastmod>2025-10-29</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  -->
+
+  <!-- Section: Contact -->
+  <url>
+    <loc>https://beeplap.com.np/#contact</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>

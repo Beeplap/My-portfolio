@@ -73,6 +73,67 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://beeplap.com.np/" />
 
+    <!-- Structured Data: WebSite (helps Google show site name + sitelinks) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Beeplap Gharti Magar",
+        "alternateName": ["Beeplap", "Beeplap Portfolio"],
+        "url": "https://beeplap.com.np",
+        "description": "Portfolio of Beeplap Gharti Magar — Full-Stack Developer from Nepal creating modern web experiences.",
+        "inLanguage": "en",
+        "publisher": {
+          "@type": "Person",
+          "name": "Beeplap Gharti Magar",
+          "url": "https://beeplap.com.np"
+        }
+      }
+    </script>
+
+    <!-- Structured Data: SiteNavigationElement (signals sub-pages for sitelinks) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SiteNavigationElement",
+        "name": "Main Navigation",
+        "url": "https://beeplap.com.np",
+        "hasPart": [
+          {
+            "@type": "WebPage",
+            "name": "Home",
+            "description": "Welcome — Beeplap Gharti Magar, Full-Stack Developer from Nepal",
+            "url": "https://beeplap.com.np/#home"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Experience",
+            "description": "Professional experience and work history of Beeplap Gharti Magar",
+            "url": "https://beeplap.com.np/#experience"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Projects",
+            "description": "Portfolio projects built by Beeplap — web apps, tools, and open-source work",
+            "url": "https://beeplap.com.np/#projects"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Skills",
+            "description": "Technical skills — React, Next.js, TypeScript, Node.js, Supabase, and more",
+            "url": "https://beeplap.com.np/#skills"
+          },
+          {
+            "@type": "WebPage",
+            "name": "Contact",
+            "description": "Get in touch with Beeplap Gharti Magar for collaboration or freelance work",
+            "url": "https://beeplap.com.np/#contact"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Structured Data: Person (Knowledge Panel + identity) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -87,8 +148,17 @@
           "https://www.facebook.com/beeplap.g.magar"
         ],
         "jobTitle": "Full-Stack Developer",
-        "description": "Full-Stack Developer specializing in modern web applications with React, Tailwind CSS, and Supabase.",
+        "description": "Full-Stack Developer from Nepal specializing in modern web applications with React, Next.js, TypeScript, Node.js, Tailwind CSS, and Supabase.",
         "image": "https://beeplap.com.np/assets/beeo.jpg",
+        "knowsAbout": [
+          "React", "Next.js", "TypeScript", "Node.js", "Supabase",
+          "Tailwind CSS", "JavaScript", "Full-Stack Development",
+          "Web Development", "Software Engineering"
+        ],
+        "nationality": {
+          "@type": "Country",
+          "name": "Nepal"
+        },
         "homeLocation": {
           "@type": "Country",
           "name": "Nepal"
