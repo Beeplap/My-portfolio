@@ -27,7 +27,20 @@
     "image": "/assets/yarsha.png",
     "githubNote": "Repo is kept private, as website is for commercial use"
   },
-   {
+  {
+    "id": "yarsha-wears",
+    "title": "Yarsha Wears",
+    "description": "A modern e-commerce clothing brand platform specializing in premium apparel, streetwear, and fashion apparel.",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "link": "https://yarshawears.vercel.app/",
+    "github": "https://github.com/Beeplap/yarsha-wears",
+    "image": "/assets/yarsha-wears.jpg"
+  },
+  {
     "id": "4785988b-5789-4946-9974-26bdaa4418a3",
     "title": "OpenDocs",
     "description": "OpenDocs is a client-side opensource document workspace for document formatting and managing.",
