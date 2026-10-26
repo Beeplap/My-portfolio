@@ -38,7 +38,7 @@
     ],
     "link": "https://yarshawears.vercel.app/",
     "github": "https://github.com/Beeplap/yarsha-wears",
-    "image": "/assets/yarsha-wears.jpg"
+    "image": "/assets/yarsha-wears.png"
   },
   {
     "id": "4785988b-5789-4946-9974-26bdaa4418a3",
@@ -49,7 +49,7 @@
       "Supabase",
       "Typescript"
     ],
-    "link": "https://free-scanner.vercel.app/",
+    "link": "https://opendocuments.vercel.app/",
     "github": "https://github.com/Beeplap/openDocs",
     "image": "/assets/opendocs-1778757839888.png"
   }, 
