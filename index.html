@@ -4,8 +4,12 @@
     <!-- Basic Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.ico" />
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Favicons & App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
     <title>Beeplap Gharti Magar | Full-Stack Developer</title>
 
     <!-- SEO Meta -->
@@ -33,8 +37,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <!-- Icons and PWA -->
-    <link rel="apple-touch-icon" href="/favicon.ico" />
+    <!-- Apple Touch Icon & Manifest -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#0ea5e9" />
     <meta name="color-scheme" content="dark light" />
@@ -176,11 +180,46 @@
             "name": "Main Navigation",
             "url": "https://beeplap.com.np",
             "hasPart": [
-              { "@type": "WebPage", "name": "Home", "description": "Welcome — Beeplap Gharti Magar, Full-Stack Developer from Nepal", "url": "https://beeplap.com.np/#home" },
-              { "@type": "WebPage", "name": "Experience", "description": "Professional experience, education, and extracurricular activities of Beeplap Gharti Magar", "url": "https://beeplap.com.np/#experience" },
-              { "@type": "WebPage", "name": "Projects", "description": "Portfolio projects built by Beeplap — Avenue Butwal, Yarsha Byte, OpenDocs, ScholarSync, and more", "url": "https://beeplap.com.np/#projects" },
-              { "@type": "WebPage", "name": "Skills", "description": "Technical skills — React, Next.js, TypeScript, Node.js, Go, Rust, PHP, Supabase, Git", "url": "https://beeplap.com.np/#skills" },
-              { "@type": "WebPage", "name": "Contact", "description": "Get in touch with Beeplap Gharti Magar — email ghartibeeplap@gmail.com", "url": "https://beeplap.com.np/#contact" }
+              { "@type": "WebPage", "name": "Home", "description": "Welcome — Beeplap Gharti Magar, Full-Stack Developer from Nepal", "url": "https://beeplap.com.np/" },
+              { "@type": "WebPage", "name": "Projects", "description": "Portfolio projects built by Beeplap — Avenue Butwal, Yarsha Byte, OpenDocs, ScholarSync, and more", "url": "https://beeplap.com.np/projects" },
+              { "@type": "WebPage", "name": "Experience", "description": "Professional experience, education, and extracurricular activities of Beeplap Gharti Magar", "url": "https://beeplap.com.np/experience" },
+              { "@type": "WebPage", "name": "Skills", "description": "Technical skills — React, Next.js, TypeScript, Node.js, Go, Rust, PHP, Supabase, Git", "url": "https://beeplap.com.np/skills" },
+              { "@type": "WebPage", "name": "Contact", "description": "Get in touch with Beeplap Gharti Magar — email ghartibeeplap@gmail.com", "url": "https://beeplap.com.np/contact" }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://beeplap.com.np/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Projects",
+                "item": "https://beeplap.com.np/projects"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Experience",
+                "item": "https://beeplap.com.np/experience"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Skills",
+                "item": "https://beeplap.com.np/skills"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Contact",
+                "item": "https://beeplap.com.np/contact"
+              }
             ]
           },
           {
@@ -314,6 +353,17 @@
           <link itemprop="sameAs" href="https://www.facebook.com/beeplap.g.magar" />
           <link itemprop="sameAs" href="https://codeberg.org/beeplap" />
         </header>
+
+        <nav aria-label="Sitelinks navigation">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/experience">Experience</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </nav>
 
         <section>
           <h2>About Beeplap Gharti Magar</h2>

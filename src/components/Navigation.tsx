@@ -6,14 +6,15 @@ import { Menu, X } from "lucide-react"
 interface NavItem {
   name: string
   href: string
+  sectionId: string
 }
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "#home" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/", sectionId: "home" },
+  { name: "Experience", href: "/experience", sectionId: "experience" },
+  { name: "Projects", href: "/projects", sectionId: "projects" },
+  { name: "Skills", href: "/skills", sectionId: "skills" },
+  { name: "Contact", href: "/contact", sectionId: "contact" },
 ]
 
 const Navigation = () => {
@@ -24,16 +25,18 @@ const Navigation = () => {
   const navRef = useRef<HTMLDivElement>(null)
 
   // Smooth scroll behavior
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
     e.preventDefault()
-    const targetId = href.replace('#', '')
-    const targetElement = document.getElementById(targetId)
+    const targetElement = document.getElementById(item.sectionId)
     
     if (targetElement) {
       targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       })
+      window.history.pushState({}, '', item.href)
+    } else {
+      window.location.href = item.href
     }
     setIsMobileMenuOpen(false)
   }
@@ -41,8 +44,7 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => {
-        const id = item.href.replace('#', '')
-        return document.getElementById(id)
+        return document.getElementById(item.sectionId)
       }).filter(Boolean) 
 
       if (sections.length === 0) return
@@ -192,7 +194,7 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item)}
                 onMouseEnter={() => setHoverIndex(i)}
                 className={`relative z-10 px-4 py-1.5 text-sm font-medium transition-colors duration-300 ${
                   isHovered 
@@ -232,7 +234,7 @@ const Navigation = () => {
             <a
               key={item.name}
               href={item.href}
-              onClick={(e) => handleNavClick(e, item.href)}
+              onClick={(e) => handleNavClick(e, item)}
               className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${
                 activeIndex === index
                   ? "text-white bg-white/20"
